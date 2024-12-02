@@ -5,6 +5,7 @@ fun day02() {
         line.split("\\s+".toRegex()).map(String::toInt)
     }
     "Day 02: ${countSafeReports(reports)}".println()
+    "Day 02 pt2: ${countSafeReportsWithProblemDampener(reports)}".println()
 }
 
 fun isSafeReport(levels: List<Int>): Boolean {
@@ -19,4 +20,20 @@ fun isSafeReport(levels: List<Int>): Boolean {
 
 fun countSafeReports(reports: List<List<Int>>): Int {
     return reports.count { isSafeReport(it) }
+}
+fun canBecomeSafeByRemovingOneLevel(levels: List<Int>): Boolean {
+    if (isSafeReport(levels)) return true
+
+    for (i in levels.indices) {
+        val modifiedLevels = levels.toMutableList()
+        modifiedLevels.removeAt(i)
+        if (isSafeReport(modifiedLevels)) {
+            return true
+        }
+    }
+    return false
+}
+
+fun countSafeReportsWithProblemDampener(reports: List<List<Int>>): Int {
+    return reports.count { canBecomeSafeByRemovingOneLevel(it) }
 }

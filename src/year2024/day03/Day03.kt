@@ -1,8 +1,12 @@
+package year2024.day03
+
+import println
+import readInput
+
 fun day03() {
-    val input = readInput("day03")
+    val input = readInput("year2024/day03/Day03")
     val data = input.joinToString("")
     val validPattern = Regex("""mul\((\d{1,3}),(\d{1,3})\)""")
-    val controlPattern = Regex("""do\(\)|don't\(\)""")
 
     // Part 1: Sum all valid multiplications
     val totalSumPart1 = validPattern.findAll(data)

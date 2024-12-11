@@ -1,5 +1,10 @@
+package year2024.day01
+
+import println
+import readInput
+
 fun day01() {
-    val input = readInput("day01")
+    val input = readInput("year2024/day01/Day01")
 
     val leftList = mutableListOf<Int>()
     val rightList = mutableListOf<Int>()

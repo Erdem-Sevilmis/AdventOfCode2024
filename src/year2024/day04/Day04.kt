@@ -1,5 +1,10 @@
+package year2024.day04
+
+import println
+import readInput
+
 fun day04() {
-    val input = readInput("day04")
+    val input = readInput("year2024/day04/Day04")
     val target = "XMAS"
     val directions = listOf(
         0 to 1,    // Right

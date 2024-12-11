@@ -1,5 +1,10 @@
+package year2024.day02
+
+import println
+import readInput
+
 fun day02() {
-    val input = readInput("day02")
+    val input = readInput("year2024/day02/Day02")
 
     val reports = input.map { line ->
         line.split("\\s+".toRegex()).map(String::toInt)

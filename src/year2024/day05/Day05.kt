@@ -1,5 +1,10 @@
+package year2024.day05
+
+import println
+import readInput
+
 fun day05() {
-    val input = readInput("day05")
+    val input = readInput("year2024/day05/Day05")
     val splitIndex = input.indexOfFirst { it.isBlank() }
     val rulesInput = input.subList(0, splitIndex)
     val updatesInput = input.subList(splitIndex + 1, input.size)
